@@ -71,7 +71,7 @@ export default function HeroBanner() {
             </a>
             <a
               href={site.resume}
-              download="বাধন বেপারী.pdf"
+              download="Badhon-Bepari-CV.pdf"
               className="group inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-cream-soft/70 px-6 py-3.5 text-sm font-semibold text-ink transition-all duration-300 hover:border-forest/30 hover:bg-white"
             >
               সিভি ডাউনলোড

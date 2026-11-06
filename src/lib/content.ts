@@ -6,7 +6,9 @@ export const site = {
   phone: "+976 9911 2233",
   phoneHref: "+97699112233",
   location: "সেলেঙ্গে, মঙ্গোলিয়া",
-  resume: encodeURI("/বাধন বেপারী.pdf"),
+  // ASCII-only path: Bengali filenames get mangled in CDN Content-Disposition
+  // headers (Vercel) and fail to download on some browsers/devices.
+  resume: "/badhon-bepari-cv.pdf",
   tagline: "মাটি আর ঘামে গড়া প্রতিদিনের শ্রম।",
   availability: "দিনমজুরি ও মৌসুমি কাজের জন্য প্রস্তুত",
 } as const;

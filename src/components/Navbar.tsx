@@ -115,7 +115,7 @@ export default function Navbar() {
         <div className="flex items-center justify-end gap-2 lg:col-start-3">
           <a
             href={site.resume}
-            download="বাধন বেপারী.pdf"
+            download="Badhon-Bepari-CV.pdf"
             className="group hidden items-center gap-2 rounded-full bg-forest px-5 py-3 text-sm font-semibold text-cream transition-all duration-300 hover:bg-ink hover:shadow-card sm:inline-flex"
           >
             সিভি ডাউনলোড
@@ -168,7 +168,7 @@ export default function Navbar() {
           <div className="mt-3 grid gap-2 border-t border-ink/10 pt-3">
             <a
               href={site.resume}
-              download="বাধন বেপারী.pdf"
+              download="Badhon-Bepari-CV.pdf"
               className="flex items-center justify-between rounded-2xl bg-forest px-4 py-3.5 text-sm font-semibold text-cream"
               onClick={() => setMenuOpen(false)}
             >

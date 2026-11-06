@@ -54,7 +54,7 @@ export default function Footer() {
               </a>
               <a
                 href={site.resume}
-                download="বাধন বেপারী.pdf"
+                download="Badhon-Bepari-CV.pdf"
                 className="group inline-flex items-center gap-2 rounded-full border border-cream/15 px-5 py-3 text-sm font-semibold text-cream transition-colors hover:border-cream/30 hover:bg-cream/5"
               >
                 সিভি ডাউনলোড
