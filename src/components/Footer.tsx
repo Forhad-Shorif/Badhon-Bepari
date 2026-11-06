@@ -129,15 +129,16 @@ export default function Footer() {
         </div>
 
         <div aria-hidden="true" className="select-none overflow-hidden py-4 sm:py-6 px-4">
-          <p className="whitespace-nowrap font-display text-[clamp(1.5rem,4.5vw,3rem)] leading-tight tracking-tight bg-gradient-to-r from-cream via-cream/80 to-amber/60 bg-clip-text text-transparent drop-shadow-sm text-center">
-            Designed & Developed <span className="text-amber/90 font-semibold">with ❤️ by ক্রিয়েটর</span>
+          <p className="font-display text-[clamp(1.4rem,4.2vw,3rem)] leading-tight tracking-tight bg-gradient-to-r from-cream via-cream/80 to-amber/60 bg-clip-text text-transparent drop-shadow-sm text-center break-words">
+            Designed & Developed <span className="text-amber/90 font-semibold whitespace-nowrap">with ❤️ by ক্রিয়েটর</span>
           </p>
-          <p className="whitespace-nowrap font-display text-[clamp(1.2rem,4vw,2.5rem)] leading-tight tracking-tight text-center mt-1">
+          <p className="font-display text-[clamp(1.1rem,3.8vw,2.5rem)] leading-tight tracking-tight text-center mt-2 px-2">
             <span className="text-cream/80">꧁𓊈𒆜</span>
             <span className="bg-gradient-to-r from-amber-300 via-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold drop-shadow-[0_0_15px_rgba(251,191,36,0.5)]">
               ফোরহাদ শরীফ
             </span>
-            <span className="text-cream/80">𒆜𓊉꧂</span> <span className="text-amber drop-shadow-sm">📍 পশ্চিম বাসকান্দি</span>
+            <span className="text-cream/80">𒆜𓊉꧂</span>
+            <span className="inline-block text-amber drop-shadow-sm mt-1 sm:mt-0 sm:ml-2">📍 পশ্চিম বাসকান্দি</span>
           </p>
         </div>
 
