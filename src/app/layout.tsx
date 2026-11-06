@@ -21,17 +21,17 @@ const displayFont = Noto_Serif_Bengali({
 export const metadata: Metadata = {
   metadataBase: new URL("https://badhon.mn"),
   title: {
-    default: "বাদন — খামার শ্রমিক ও দিনমজুর",
-    template: "%s | বাদন",
+    default: "বাধন — খামার শ্রমিক ও দিনমজুর",
+    template: "%s | বাধন",
   },
   description:
-    "মাটি আর ঘামে গড়া প্রতিদিনের শ্রম। ৫ বছরের খামারি অভিজ্ঞতা, ফসল তোলা, চাষাবাদ, গুদাম ও দিনমজুরির কাজে দক্ষ বাদনের পোর্টফোলিও।",
+    "মাটি আর ঘামে গড়া প্রতিদিনের শ্রম। ৫ বছরের খামারি অভিজ্ঞতা, ফসল তোলা, চাষাবাদ, গুদাম ও দিনমজুরির কাজে দক্ষ বাধনের পোর্টফোলিও।",
   keywords: [
     "খামার শ্রমিক",
     "দিনমজুর",
     "কৃষি কাজ",
     "পোর্টফোলিও",
-    "বাদন",
+    "বাধন",
     "ফসল",
     "মঙ্গোলিয়া",
   ],
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     locale: "bn_BD",
     url: "/",
     siteName: site.name,
-    title: "বাদন — খামার শ্রমিক ও দিনমজুর",
+    title: "বাধন — খামার শ্রমিক ও দিনমজুর",
     description:
       "মাটি আর ঘামে গড়া প্রতিদিনের শ্রম। ৫ বছরের অভিজ্ঞতা, ১২ ধরনের ফসল, কাজের দিনের ছোট ছোট মুহূর্ত।",
     images: [
@@ -50,13 +50,13 @@ export const metadata: Metadata = {
         url: "/image/Banner.jpg",
         width: 765,
         height: 692,
-        alt: "বাদন — খামার শ্রমিক ও দিনমজুর",
+        alt: "বাধন — খামার শ্রমিক ও দিনমজুর",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "বাদন — খামার শ্রমিক ও দিনমজুর",
+    title: "বাধন — খামার শ্রমিক ও দিনমজুর",
     description:
       "মাটি আর ঘামে গড়া প্রতিদিনের শ্রম। ৫ বছরের অভিজ্ঞতা, ১২ ধরনের ফসল।",
     images: ["/image/Banner.jpg"],

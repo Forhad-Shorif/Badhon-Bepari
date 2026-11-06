@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>বাধন বেপারী — সিভি</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap");
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #f7f2e8;
+        color: #12241a;
+        font-family: "Hind Siliguri", "Nirmala UI", "Noto Sans Bengali", sans-serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        width: 210mm;
+        height: 297mm;
+        display: grid;
+        grid-template-columns: 72mm 1fr;
+        overflow: hidden;
+        background: #f7f2e8;
+      }
+
+      .sidebar {
+        position: relative;
+        background: #1d4d36;
+        color: #f7f2e8;
+        padding: 12mm 9mm 10mm;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .sidebar::after {
+        content: "";
+        position: absolute;
+        right: -40mm;
+        bottom: -46mm;
+        width: 96mm;
+        height: 96mm;
+        border: 0.4mm solid rgba(247, 242, 232, 0.12);
+        border-radius: 50%;
+      }
+
+      .portrait {
+        width: 38mm;
+        height: 46mm;
+        object-fit: cover;
+        object-position: 50% 24%;
+        border-radius: 5mm;
+        border: 0.6mm solid rgba(247, 242, 232, 0.28);
+        display: block;
+        margin-bottom: 7mm;
+      }
+
+      .name {
+        margin: 0;
+        font-family: "Noto Serif Bengali", "Nirmala UI", Georgia, serif;
+        font-size: 7.8mm;
+        line-height: 1.08;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      .name span {
+        color: #f3cb82;
+      }
+
+      .role {
+        margin: 3.5mm 0 0;
+        font-size: 7.2pt;
+        line-height: 1.5;
+        letter-spacing: 0.08em;
+        color: rgba(247, 242, 232, 0.65);
+      }
+
+      .side-section {
+        margin-top: 7mm;
+      }
+
+      .side-label {
+        margin: 0 0 3mm;
+        font-size: 6.6pt;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        color: #f3cb82;
+      }
+
+      .contact {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 2.4mm;
+      }
+
+      .contact li {
+        font-size: 7.6pt;
+        line-height: 1.4;
+        color: rgba(247, 242, 232, 0.82);
+      }
+
+      .contact strong {
+        display: block;
+        font-size: 6.4pt;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        color: rgba(247, 242, 232, 0.42);
+        margin-bottom: 0.4mm;
+      }
+
+      .side-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 2.2mm;
+      }
+
+      .side-list li {
+        position: relative;
+        padding-left: 4mm;
+        font-size: 7.5pt;
+        line-height: 1.5;
+        color: rgba(247, 242, 232, 0.82);
+      }
+
+      .side-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 1.8mm;
+        width: 1.4mm;
+        height: 1.4mm;
+        border-radius: 50%;
+        background: #e8a53c;
+      }
+
+      .side-note {
+        margin-top: auto;
+        padding-top: 6mm;
+        border-top: 0.3mm solid rgba(247, 242, 232, 0.14);
+        font-size: 7pt;
+        line-height: 1.55;
+        color: rgba(247, 242, 232, 0.55);
+      }
+
+      .side-note strong {
+        color: #f3cb82;
+        font-weight: 600;
+      }
+
+      .main {
+        padding: 12mm 11mm 9mm;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .topline {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4mm;
+        padding-bottom: 4mm;
+        border-bottom: 0.3mm solid rgba(18, 36, 26, 0.14);
+      }
+
+      .topline p {
+        margin: 0;
+        font-size: 6.6pt;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        color: #1d4d36;
+      }
+
+      .topline span {
+        font-size: 6.4pt;
+        color: rgba(18, 36, 26, 0.5);
+      }
+
+      .intro {
+        margin: 5mm 0 0;
+        font-size: 8.3pt;
+        line-height: 1.72;
+        color: rgba(18, 36, 26, 0.7);
+      }
+
+      .section {
+        margin-top: 6mm;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        gap: 3mm;
+        margin: 0 0 3.5mm;
+        font-family: "Noto Serif Bengali", "Nirmala UI", Georgia, serif;
+        font-size: 10.2pt;
+        letter-spacing: 0.01em;
+        color: #12241a;
+      }
+
+      .section-title::before {
+        content: "";
+        width: 7mm;
+        height: 0.6mm;
+        background: #e8a53c;
+      }
+
+      .job {
+        display: grid;
+        grid-template-columns: 22mm 1fr;
+        gap: 4mm;
+        padding: 3.4mm 0;
+        border-top: 0.25mm solid rgba(18, 36, 26, 0.1);
+      }
+
+      .job:first-of-type {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .job-date {
+        font-size: 6.8pt;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: #1d4d36;
+        padding-top: 0.6mm;
+      }
+
+      .job h3 {
+        margin: 0;
+        font-size: 9.1pt;
+        line-height: 1.35;
+        font-weight: 700;
+        color: #12241a;
+      }
+
+      .job .org {
+        margin: 1mm 0 0;
+        font-size: 7.4pt;
+        font-style: italic;
+        color: rgba(18, 36, 26, 0.52);
+      }
+
+      .job ul {
+        margin: 2mm 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 1.2mm;
+      }
+
+      .job li {
+        position: relative;
+        padding-left: 3.5mm;
+        font-size: 7.6pt;
+        line-height: 1.55;
+        color: rgba(18, 36, 26, 0.66);
+      }
+
+      .job li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 2.1mm;
+        width: 1.2mm;
+        height: 1.2mm;
+        border-radius: 50%;
+        background: #527a5e;
+      }
+
+      .bottom-grid {
+        margin-top: 5mm;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 6mm;
+        padding-top: 4mm;
+        border-top: 0.25mm solid rgba(18, 36, 26, 0.1);
+      }
+
+      .bottom-grid h3 {
+        margin: 0 0 2mm;
+        font-size: 6.6pt;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: #1d4d36;
+      }
+
+      .bottom-grid p {
+        margin: 0;
+        font-size: 7.6pt;
+        line-height: 1.6;
+        color: rgba(18, 36, 26, 0.66);
+      }
+
+      .bottom-grid p + p {
+        margin-top: 1mm;
+      }
+
+      .training {
+        display: grid;
+        gap: 2.2mm;
+      }
+
+      .training-row {
+        display: grid;
+        grid-template-columns: 18mm 1fr;
+        gap: 3mm;
+        align-items: baseline;
+      }
+
+      .training-row span {
+        font-size: 6.8pt;
+        font-weight: 700;
+        color: #1d4d36;
+      }
+
+      .training-row p {
+        margin: 0;
+        font-size: 7.5pt;
+        line-height: 1.55;
+        color: rgba(18, 36, 26, 0.66);
+      }
+
+      .training-row strong {
+        color: #12241a;
+      }
+
+      .principle {
+        margin-top: 5mm;
+        padding: 3.5mm 4.5mm;
+        border-left: 0.8mm solid #e8a53c;
+        background: rgba(223, 232, 217, 0.45);
+        border-radius: 0 2mm 2mm 0;
+      }
+
+      .principle p {
+        margin: 0;
+        font-family: "Noto Serif Bengali", "Nirmala UI", Georgia, serif;
+        font-size: 8.3pt;
+        line-height: 1.6;
+        font-style: italic;
+        color: rgba(18, 36, 26, 0.72);
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5mm;
+        margin-top: 2mm;
+      }
+
+      .chips span {
+        display: inline-block;
+        padding: 1.1mm 2.2mm;
+        border: 0.25mm solid rgba(29, 77, 54, 0.18);
+        border-radius: 99mm;
+        font-size: 6.5pt;
+        color: rgba(18, 36, 26, 0.68);
+      }
+
+      .footer {
+        margin-top: auto;
+        padding-top: 5mm;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4mm;
+        border-top: 0.25mm solid rgba(18, 36, 26, 0.12);
+        font-size: 6.2pt;
+        color: rgba(18, 36, 26, 0.38);
+      }
+
+      .footer strong {
+        color: #1d4d36;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <aside class="sidebar">
+        <img
+          class="portrait"
+          src="public/image/Banner.jpg"
+          alt="বাধন বেপারী"
+        />
+
+        <h1 class="name">বাধন<br />বেপারী<span>.</span></h1>
+        <p class="role">খামার শ্রমিক<br />দিনমজুর</p>
+
+        <section class="side-section">
+          <h2 class="side-label">যোগাযোগ</h2>
+          <ul class="contact">
+            <li><strong>ফোন</strong>+976 9911 2233</li>
+            <li><strong>ইমেইল</strong>hello@badhon.mn</li>
+            <li><strong>ঠিকানা</strong>সেলেঙ্গে, মঙ্গোলিয়া</li>
+            <li><strong>ওয়েব</strong>badhon.mn</li>
+          </ul>
+        </section>
+
+        <section class="side-section">
+          <h2 class="side-label">দক্ষতা</h2>
+          <ul class="side-list">
+            <li>ফসল তোলা, বাছাই, প্যাকিং</li>
+            <li>মাটি প্রস্তুতি, বপন, সেচ</li>
+            <li>গ্রিনহাউস, ড্রিপ সেচ</li>
+            <li>মাল ওঠানো-নামানো, গুদাম</li>
+            <li>সময়ানুবর্তিতা, দলে কাজ</li>
+            <li>পশুপালনে সহায়তা</li>
+          </ul>
+        </section>
+
+        <section class="side-section">
+          <h2 class="side-label">ভাষা</h2>
+          <ul class="contact">
+            <li><strong>বাংলা</strong>মাতৃভাষা</li>
+            <li><strong>ইংরেজি</strong>প্রাথমিক</li>
+          </ul>
+        </section>
+
+        <p class="side-note">
+          <strong>কাজের সুযোগ:</strong> সেলেঙ্গে, উলানবাটর।
+          মৌসুমি ও দিনমজুরির জন্য প্রস্তুত।
+        </p>
+      </aside>
+
+      <section class="main">
+        <div class="topline">
+          <p>কাজের অভিজ্ঞতা · ২০২৬</p>
+          <span>৫+ বছরের অভিজ্ঞতা</span>
+        </div>
+
+        <p class="intro">
+          ৫ বছরের অভিজ্ঞতাসম্পন্ন খামার শ্রমিক। সবজি, ফল, দানাদার ফসল বপন,
+          সেচ, পরিচর্যা, ফসল তোলা, বাছাই ও মাল ওঠানো-নামানোর কাজে দক্ষ।
+          সময়ানুবর্তী, কঠিন পরিশ্রমে ধৈর্যশীল এবং দলে কাজ করতে অভ্যস্ত।
+        </p>
+
+        <section class="section">
+          <h2 class="section-title">কাজের অভিজ্ঞতা</h2>
+
+          <article class="job">
+            <p class="job-date">২০২৪ —<br />এখন</p>
+            <div>
+              <h3>গুদাম ও ডেলিভারি সহকারী</h3>
+              <p class="org">সবজির গুদাম · সেলেঙ্গে</p>
+              <ul>
+                <li>ফসল বাছাই, প্যাকিং এবং গুদামে সঠিকভাবে সাজানো।</li>
+                <li>বাজারে পাঠানোর জন্য মাল ওঠানো, নামানো ও গণনা।</li>
+                <li>গুদামের পরিচ্ছন্নতা ও আর্দ্রতা নিয়ন্ত্রণে নজর রাখা।</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <p class="job-date">২০২৩ —<br />২০২৪</p>
+            <div>
+              <h3>ফসল তোলার দলের সদস্য</h3>
+              <p class="org">তিনটি স্থানীয় খামার · সেলেঙ্গে</p>
+              <ul>
+                <li>আপেল, পেঁয়াজ, রসুন, আলু তোলা ও বাছাই।</li>
+                <li>ফসল তোলার পর পরিষ্কার, বাঁধা ও প্যাকিং।</li>
+                <li>দলের গতি অনুযায়ী কাজ এবং নিরাপত্তার নিয়ম মেনে চলা।</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="job">
+            <p class="job-date">২০২১ —<br />২০২২</p>
+            <div>
+              <h3>খামারের দিনমজুর</h3>
+              <p class="org">পারিবারিক খামার · সেলেঙ্গে</p>
+              <ul>
+                <li>মাটি প্রস্তুতি, চারা রোপণ, সেচ ও ঘাস কাটা।</li>
+                <li>গ্রিনহাউসে টমেটো ও শসা চাষ।</li>
+                <li>ড্রিপ সেচের পাইপ মেরামত ও ছোটখাটো কাজ।</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <div class="bottom-grid">
+          <div>
+            <h3>যেসব ফসল ফলাতে ও পরিচর্যা করতে পারি</h3>
+            <div class="chips">
+              <span>আলু</span>
+              <span>পেঁয়াজ</span>
+              <span>রসুন</span>
+              <span>টমেটো</span>
+              <span>শসা</span>
+              <span>মরিচ</span>
+              <span>বাঁধাকপি</span>
+              <span>গাজর</span>
+              <span>আপেল</span>
+              <span>আঙুর</span>
+              <span>কমলা</span>
+              <span>গম</span>
+            </div>
+          </div>
+
+          <div>
+            <h3>শিক্ষা</h3>
+            <p><strong>২০১৯</strong> · মাধ্যমিক শিক্ষা</p>
+            <p>সেলেঙ্গে প্রদেশের সাধারণ শিক্ষা বিদ্যালয়</p>
+            <h3 style="margin-top: 4mm">অতিরিক্ত</h3>
+            <p>ট্রাক্টর ও ছোট যন্ত্রপাতি চালানো শিখেছি। কৃষিযন্ত্রে অভ্যস্ত।</p>
+          </div>
+        </div>
+
+        <section class="section">
+          <h2 class="section-title">প্রশিক্ষণ</h2>
+          <div class="training">
+            <div class="training-row">
+              <span>২০২৪</span>
+              <p><strong>কর্মক্ষেত্রের নিরাপত্তা</strong> · স্থানীয় শ্রম কেন্দ্র</p>
+            </div>
+            <div class="training-row">
+              <span>২০২৩</span>
+              <p><strong>ড্রিপ সেচের ব্যবহারিক প্রশিক্ষণ</strong> · কৃষক প্রশিক্ষণ কেন্দ্র</p>
+            </div>
+            <div class="training-row">
+              <span>২০২২</span>
+              <p><strong>মাটি প্রস্তুতি ও সার</strong> · কৃষি পরামর্শ কেন্দ্র</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="principle">
+          <p>
+            “সময় ঠিক রাখা, কাজ শেষ করা, পরদিন আবার আস্থা নিয়ে ফিরে আসা—এটাই
+            আমার নীতি।”
+          </p>
+        </div>
+
+        <footer class="footer">
+          <span>এই সিভিটি <strong>badhon.mn</strong> পোর্টফোলিওর সঙ্গে প্রস্তুত করা হয়েছে।</span>
+          <span>২০২৬</span>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>

@@ -54,7 +54,7 @@ export default function Footer() {
               </a>
               <a
                 href={site.resume}
-                download="বাধন-সিভি.pdf"
+                download="বাধন বেপারী.pdf"
                 className="group inline-flex items-center gap-2 rounded-full border border-cream/15 px-5 py-3 text-sm font-semibold text-cream transition-colors hover:border-cream/30 hover:bg-cream/5"
               >
                 সিভি ডাউনলোড
@@ -130,7 +130,7 @@ export default function Footer() {
 
         <div aria-hidden="true" className="select-none overflow-hidden py-7 sm:py-9">
           <p className="whitespace-nowrap font-display text-[clamp(4.5rem,15vw,12rem)] leading-[0.78] tracking-[-0.06em] text-cream/[0.055]">
-            বাধন বেপারী<span className="text-amber/20">.</span>
+            {site.name}<span className="text-amber/20">.</span>
           </p>
         </div>
 
