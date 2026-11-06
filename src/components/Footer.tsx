@@ -1,4 +1,4 @@
-import { navLinks, site, socials } from "@/lib/content";
+﻿import { navLinks, site, socials } from "@/lib/content";
 import {
   ArrowUpRightIcon,
   DownloadIcon,
@@ -128,9 +128,16 @@ export default function Footer() {
           </div>
         </div>
 
-        <div aria-hidden="true" className="select-none overflow-hidden py-7 sm:py-9">
-          <p className="whitespace-nowrap font-display text-[clamp(4.5rem,15vw,12rem)] leading-[0.78] tracking-[-0.06em] text-cream/[0.055]">
-            {site.name}<span className="text-amber/20">.</span>
+        <div aria-hidden="true" className="select-none overflow-hidden py-4 sm:py-6 px-4">
+          <p className="whitespace-nowrap font-display text-[clamp(1.5rem,4.5vw,3rem)] leading-tight tracking-tight bg-gradient-to-r from-cream via-cream/80 to-amber/60 bg-clip-text text-transparent drop-shadow-sm text-center">
+            Designed & Developed <span className="text-amber/90 font-semibold">with ❤️ by ক্রিয়েটর</span>
+          </p>
+          <p className="whitespace-nowrap font-display text-[clamp(1.2rem,4vw,2.5rem)] leading-tight tracking-tight text-center mt-1">
+            <span className="text-cream/80">꧁𓊈𒆜</span>
+            <span className="bg-gradient-to-r from-amber-300 via-yellow-400 to-orange-500 bg-clip-text text-transparent font-bold drop-shadow-[0_0_15px_rgba(251,191,36,0.5)]">
+              ফোরহাদ শরীফ
+            </span>
+            <span className="text-cream/80">𒆜𓊉꧂</span> <span className="text-amber drop-shadow-sm">📍 পশ্চিম বাসকান্দি</span>
           </p>
         </div>
 
