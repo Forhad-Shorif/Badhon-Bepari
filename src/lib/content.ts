@@ -6,7 +6,7 @@ export const site = {
   phone: "+976 9911 2233",
   phoneHref: "+97699112233",
   location: "সেলেঙ্গে, মঙ্গোলিয়া",
-  resume: "/resume.pdf",
+  resume: encodeURI("/বাধন বেপারী.pdf"),
   tagline: "মাটি আর ঘামে গড়া প্রতিদিনের শ্রম।",
   availability: "দিনমজুরি ও মৌসুমি কাজের জন্য প্রস্তুত",
 } as const;
