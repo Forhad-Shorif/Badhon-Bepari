@@ -71,7 +71,7 @@ export default function Navbar() {
         <a
           href="#home"
           className="group inline-flex w-fit items-center gap-3"
-          aria-label={`${site.name} — হোমপেজ`}
+          aria-label={`${site.name} — হোম`}
           onClick={() => setActiveSection("#home")}
         >
           <span className="grid h-11 w-11 place-items-center rounded-full bg-forest text-cream transition-transform duration-500 group-hover:-rotate-12">
